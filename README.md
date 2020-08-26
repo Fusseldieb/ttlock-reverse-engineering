@@ -1,4 +1,5 @@
 # Repo that aims at reverse-engineering the TTLock protocol
+Please be aware that I've never worked with BL or even BLE, so feel free to fix, and most importantly, expect mistakes!
 
 ## The basics
 
