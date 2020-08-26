@@ -34,7 +34,7 @@ handle: 0x000d, uuid: 00002803-0000-1000-8000-00805f9b34fb
 handle: 0x000e, uuid: 0000fff4-0000-1000-8000-00805f9b34fb
 handle: 0x000f, uuid: 00002902-0000-1000-8000-00805f9b34fb
 handle: 0x0010, uuid: 00002803-0000-1000-8000-00805f9b34fb
-handle: 0x0011, uuid: 0000fff2-0000-1000-8000-00805f9b34fb
+handle: 0x0011, uuid: 0000fff2-0000-1000-8000-00805f9b34fb *
 handle: 0x0012, uuid: 00002800-0000-1000-8000-00805f9b34fb
 handle: 0x0013, uuid: 00002803-0000-1000-8000-00805f9b34fb
 handle: 0x0014, uuid: 00002a19-0000-1000-8000-00805f9b34fb *
@@ -62,6 +62,14 @@ handle: 0x0026, uuid: 00001534-1212-efde-1523-785feabcd123
 
 ### Handle descriptions
 
-#### `00002a19-0000-1000-8000-00805f9b34fb`
+#### `00002a19-0000-1000-8000-00805f9b34fb` [READ]
 
 - Battery percentage, 1 byte
+
+#### `0000fff2-0000-1000-8000-00805f9b34fb` [WRITE NO-RESP]
+
+- Appears to handle exchange of keys to open the lock, after the exchange of data, the lock opens
+
+#### `0000fff4-0000-1000-8000-00805f9b34fb` [NOTIFY]
+
+- The TTLock Official App seems to subscribe to this in order to get back if the lock was opened
