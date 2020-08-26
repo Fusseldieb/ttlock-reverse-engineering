@@ -57,7 +57,7 @@ handle: 0x0024, uuid: 00002902-0000-1000-8000-00805f9b34fb
 handle: 0x0025, uuid: 00002803-0000-1000-8000-00805f9b34fb
 handle: 0x0026, uuid: 00001534-1212-efde-1523-785feabcd123
 
-* Some kind of knoweledge about what it does, explained below
+* Some kind of knowledge about what it does, explained below
 ```
 
 ### Handle descriptions
