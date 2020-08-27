@@ -5,7 +5,7 @@ Please be aware that I've never worked with BL or even BLE, so feel free to fix,
 
 The Bluetooth lock name consists of the last 6 MAC digits, in inverted order. For instance, the lock with the name "S202F_abcdef" has the MAC "ee:c6:a2:**ef**:**cd**:**ab**".
 
-### Getting all primary UUIDs with gatttool:
+### Getting all available services (primary) with gatttool:
 
 ```
 attr handle: 0x0001, end grp handle: 0x0007 uuid: 00001800-0000-1000-8000-00805f9b34fb
@@ -16,7 +16,7 @@ attr handle: 0x0016, end grp handle: 0x001e uuid: 0000180a-0000-1000-8000-00805f
 attr handle: 0x001f, end grp handle: 0xffff uuid: 00001530-1212-efde-1523-785feabcd123
 ```
 
-### Getting all available handles with gatttool:
+### Getting all available characteristics (handles) with gatttool:
 
 ```
 handle: 0x0001, uuid: 00002800-0000-1000-8000-00805f9b34fb
