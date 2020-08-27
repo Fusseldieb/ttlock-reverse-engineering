@@ -76,7 +76,7 @@ handle: 0x0026, uuid: 00001534-1212-efde-1523-785feabcd123
 
 - The TTLock Official App seems to subscribe to this in order to get back if the lock was opened
 
-Listening on this handle and unlocking the door with the fingerprint, yields following result:
+Listening on this handle (0x000f) and unlocking the door with the fingerprint yields following result:
 ```
 pi@raspberrypi:~ $ gatttool -b EE:C6:A2:04:9A:F6 --char-write-req --handle=0x000f --value=0100 --listen
 Characteristic value was written successfully
