@@ -5,6 +5,7 @@ Please be aware that I've never worked with BL or even BLE, so feel free to fix,
 
 The Bluetooth lock name consists of the last 6 MAC digits, in inverted order. For instance, the lock with the name "S202F_abcdef" has the MAC "ee:c6:a2:**ef**:**cd**:**ab**".
 
+
 ### Getting all available services (primary) with gatttool:
 
 ```
