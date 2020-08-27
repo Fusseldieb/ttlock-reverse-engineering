@@ -75,3 +75,23 @@ handle: 0x0026, uuid: 00001534-1212-efde-1523-785feabcd123
 #### `0000fff4-0000-1000-8000-00805f9b34fb` [NOTIFY]
 
 - The TTLock Official App seems to subscribe to this in order to get back if the lock was opened
+
+Listening on this handle and unlocking the door with the fingerprint, yields following result:
+```
+pi@raspberrypi:~ $ gatttool -b EE:C6:A2:04:9A:F6 --char-write-req --handle=0x000f --value=0100 --listen
+Characteristic value was written successfully
+Notification handle = 0x000e value: 7f 5a 05 03 02 00 01 00 01 54 00 10 20 d2 fe 7a 7c 82 87 da
+Notification handle = 0x000e value: a0 31 80 fa 24 09 1a 3e 19 0d 0a
+^C
+
+pi@raspberrypi:~ $ gatttool -b EE:C6:A2:04:9A:F6 --char-write-req --handle=0x000f --value=0100 --listen
+Characteristic value was written successfully
+Notification handle = 0x000e value: 7f 5a 05 03 02 00 01 00 01 54 00 10 5f 69 3f b8 38 6f 78 1d
+Notification handle = 0x000e value: cc 65 c3 b5 16 00 73 75 fe 0d 0a
+^C
+
+pi@raspberrypi:~ $ gatttool -b EE:C6:A2:04:9A:F6 --char-write-req --handle=0x000f --value=0100 --listen
+Characteristic value was written successfully
+Notification handle = 0x000e value: 7f 5a 05 03 02 00 01 00 01 54 00 10 bd 44 1c 43 fe 20 18 83
+Notification handle = 0x000e value: 27 a4 f3 ce 30 cf 09 08 c9 0d 0a
+```
