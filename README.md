@@ -94,6 +94,9 @@ Bytes (in DEC):
 10 = "Encrypt" (Byte?)
 11 = "Length" (Of whole packet?)
 12 = Actual Data
+
+PACKET TAIL
+"59 0d 0a" = CRC byte of whole data and "0d 0a" occurrs at the end of every packet, might be a closing sequence
 ```
 
 #### `0000fff4-0000-1000-8000-00805f9b34fb` [NOTIFY]
