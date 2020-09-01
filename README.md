@@ -96,7 +96,7 @@ Bytes (in DEC):
 12 = Actual Data
 
 PACKET TAIL
-"59 0d 0a" = CRC byte of whole data and "0d 0a" occurrs at the end of every packet, might be a closing sequence
+"59 0d 0a" = "59" is the CRC byte of whole data in CRC8/MAXIM format and "0d 0a" occurrs at the end of every packet, might be a closing sequence
 ```
 
 #### `0000fff4-0000-1000-8000-00805f9b34fb` [NOTIFY]
