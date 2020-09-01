@@ -92,7 +92,7 @@ Bytes (in DEC):
 08 = "Sub organization[1]"
 09 = "Command" (ID?)
 10 = "Encrypt" (Byte?)
-11 = "Length" (Of whole packet?)
+11 = "Length" (Of whole packet)
 12 = Actual Data
 
 PACKET TAIL
