@@ -72,6 +72,30 @@ handle: 0x0026, uuid: 00001534-1212-efde-1523-785feabcd123
 
 - Appears to handle exchange of keys to open the lock, after the exchange of data, the lock opens
 
+The packet value seems to consist of following:
+
+```
+-----------------------------------------------------------------------------------------------------
+|         HEADER         |      DATA      |             DATA PACKET 2              |  DP 3  |  TAIL |
+|7f5a0503020001000155aa20|7c247a4d52ac7ee8 90a9158c42380dca524ffafd927212d375681e97 3dcf670a|59 0d0a|
+-----------------------------------------------------------------------------------------------------
+
+Bytes (in DEC):
+00 = "Header[0]"
+01 = "Header[1]"
+02 = "Protocol Type"
+03 = "Sub Version"
+04 = "Scene"
+05 = "Organization[0]"
+06 = "Organization[1]"
+07 = "Sub organization[0]"
+08 = "Sub organization[1]"
+09 = "Command" (ID?)
+10 = "Encrypt" (Byte?)
+11 = "Length" (Of whole packet?)
+12 = Actual Data
+```
+
 #### `0000fff4-0000-1000-8000-00805f9b34fb` [NOTIFY]
 
 - The TTLock Official App seems to subscribe to this in order to get back if the lock was opened
@@ -97,3 +121,4 @@ Notification handle = 0x000e value: 27 a4 f3 ce 30 cf 09 08 c9 0d 0a
 ```
 
 Notice how the hex `7f 5a 05 03 02 00 01 00 01 54 00 10` is static between all 3 attempts at unlocking the door. In the second packet, only the final hex `0d 0a` is static.
+
