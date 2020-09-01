@@ -72,7 +72,7 @@ handle: 0x0026, uuid: 00001534-1212-efde-1523-785feabcd123
 
 - Appears to handle exchange of keys to open the lock, after the exchange of data, the lock opens
 
-The packet value seems to consist of following:
+The packet value seems to consist of following (This is the *first* packet being exchanged going from PHONE to LOCK):
 
 ```
 -----------------------------------------------------------------------------------------------------
