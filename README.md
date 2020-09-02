@@ -84,11 +84,11 @@ Bytes (in DEC):
 00 = "Header[0]"
 01 = "Header[1]"
 02 = "Protocol Type"
-03 = "Sub Version"
+03 = "Sub Version" - lockVersion.getProtocolVersion()
 04 = "Scene"
-05 = "Organization[0]"
-06 = "Organization[1]"
-07 = "Sub organization[0]"
+05 = "Organization[0]" - lockVersion.getGroupId()
+06 = "Organization[1]" - |
+07 = "Sub organization[0]" - lockVersion.getOrgId()
 08 = "Sub organization[1]"
 09 = "Command" (ID?)
 10 = "Encrypt" (Byte?)
