@@ -89,7 +89,7 @@ Bytes (in DEC):
 05 = "Organization[0]" - lockVersion.getGroupId()
 06 = "Organization[1]" - |
 07 = "Sub organization[0]" - lockVersion.getOrgId()
-08 = "Sub organization[1]"
+08 = "Sub organization[1]" - |
 09 = "Command" (ID?)
 10 = "Encrypt" (Byte?)
 11 = "Length" (Of whole packet)
