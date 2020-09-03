@@ -123,5 +123,5 @@ Notification handle = 0x000e value: 7f 5a 05 03 02 00 01 00 01 54 00 10 bd 44 1c
 Notification handle = 0x000e value: 27 a4 f3 ce 30 cf 09 08 c9 0d 0a
 ```
 
-Notice how the hex `7f 5a 05 03 02 00 01 00 01 54 00 10` is static between all 3 attempts at unlocking the door. In the second packet, only the final hex `0d 0a` is static.
+Notice how the hex `7f 5a 05 03 02 00 01 00 01 54 00 10` is static between all 3 attempts at unlocking the door (that's the header btw). In the second packet, only the final hex `0d 0a` is static.
 
