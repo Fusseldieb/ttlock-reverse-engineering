@@ -137,7 +137,7 @@ Notice how the hex `7f 5a 05 03 02 00 01 00 01 54 00 10` is static between all 3
 
 ### Encryption
 
-Considering that the data is always 16 or 32 bytes long, we can assure (after some digging) that it's "AES/CBC/PKCS5Padding" encrypted with a padding of 16 (IV 16). However, trying to decrypt it results in bad padding, which means that it isn't "only" AES encrypted. There is also a XOR function involved, which encodes the bytes with the 10th byte (encrypt byte) afaik. More details here: https://reverseengineering.stackexchange.com/questions/25760/getting-the-algorithm-used-inside-this-so-file.
+Considering that the data is *always* 16 or 32 bytes long (only data, without the header or tail), we can assure (after some digging) that it's "AES/CBC/PKCS5Padding" encrypted with a padding of 16 (IV 16). However, trying to decrypt it results in bad padding, which means that it isn't "only" AES encrypted. There is also a XOR function involved, which encodes the bytes with the 10th byte (encrypt byte) afaik. More details here: https://reverseengineering.stackexchange.com/questions/25760/getting-the-algorithm-used-inside-this-so-file.
 
 In a nutshell:
 
