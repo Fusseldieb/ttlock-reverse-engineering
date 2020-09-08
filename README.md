@@ -137,7 +137,7 @@ Notice how the hex `7f 5a 05 03 02 00 01 00 01 54 00 10` is static between all 3
 
 ### Encryption
 
-Considerig that the data is always 16 or 32 bytes long, we can guess that it's AES128 CBC encrypted with a padding of 16 (IV 16). However, trying to decrypt it results in bad padding, which means that it isn't "only" AES encrypted. There is also a XOR function involved, which encodes the bytes with the 10th byte (encrypt byte) afaik. More details here: https://reverseengineering.stackexchange.com/questions/25760/getting-the-algorithm-used-inside-this-so-file.
+Considering that the data is always 16 or 32 bytes long, we can guess that it's AES128 CBC encrypted with a padding of 16 (IV 16). However, trying to decrypt it results in bad padding, which means that it isn't "only" AES encrypted. There is also a XOR function involved, which encodes the bytes with the 10th byte (encrypt byte) afaik. More details here: https://reverseengineering.stackexchange.com/questions/25760/getting-the-algorithm-used-inside-this-so-file.
 
 In a nutshell:
 
@@ -171,7 +171,9 @@ def decodeWithEncrypt(data_bytes, encrypt_byte):
         data_bytes[i] ^= encrypt_byte ^ dscrc_table[da_len]
 ```
 
-The inverse of a XOR function is also XOR [\*](https://stackoverflow.com/a/14279896/3525780) 
+The inverse of a XOR function is also XOR [\*](https://stackoverflow.com/a/14279896/3525780).
+
+Tip: The IV and the key are the **same thing** in the code! I don't know why, but `AESUtil.java` clearly shows so.
 
 Even after trying to XOR and AES decrypt it, it still gets a padding error. Something is obviously missing.
 
