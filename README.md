@@ -99,11 +99,14 @@ Bytes (in DEC):
 08 = "Sub organization[1]" - |
 09 = "Command" (ID?)
 10 = "Encrypt" (Byte?)
-11 = "Length" (Of whole packet)
+11 = "Length" (Of whole data)
 12 = Actual Data
 
 PACKET TAIL
-"59 0d 0a" = "59" is the CRC byte of whole header+data (in this case begins from 7f and ends at 0a) in CRC8/MAXIM format and "0d 0a" occurrs at the end of every packet, which is a carriage return + line feed
+"59 0d 0a" = "59" is the CRC byte of whole header+data
+(in this case begins from 7f and ends at 0a) in CRC8/MAXIM format 
+and "0d 0a" occurrs at the end of every packet, 
+which is a carriage return + line feed
 ```
 
 #### `0000fff4-0000-1000-8000-00805f9b34fb` [NOTIFY]
