@@ -1,4 +1,11 @@
 # Repo that aims at reverse-engineering the TTLock protocol
+
+#### You might be asking **why**... 
+Well, turns out, our beloved TTLocks only work with a black-box gateway from China, and, as you may have guessed, only work phoning to China. You can't use your TTLock inside your LAN or open any TTLock door remotely if the China servers are down or too slow (and they sometimes are). This also means that if one day the servers get shut down (and they eventually **will**, as do *any* services), we'll lose the remote functionality, which is useful in many cases.
+
+To try and remedy this issue, this Repo aims to reverse-engineer the TTLock SDK (which processes locally) and get it to work with any Bluetooth-capable device, such as a Raspberry Pi 3 or greater. Wouldn't it be neat to make a RPi as a Gateway for your locks? Or maybe even a simple ESP32. Well, it might not be impossible, but some work still needs to be done.
+
+#### Disclaimer before proceeding:
 Please be aware that I've never worked with BL or even BLE, so feel free to fix, and most importantly, expect mistakes!
 
 ## The basics
@@ -162,3 +169,9 @@ def xordata(data_bytes):
 ```
 
 The inverse of a XOR function is also XOR [\*](https://stackoverflow.com/a/14279896/3525780) 
+
+Even after trying to XOR and AES decrypt it, it still gets a padding error. Something is obviously missing.
+
+## Decompiling the provided SDK and helping out
+
+The SDK in question is [this one](https://github.com/ttlock/Android_SDK_Demo/tree/master/app/src/main/java/ttlock/demo) and to get the source code from it, simply unpack it and run `classes.jar` through Procyon or CFR (Online tool [here](http://www.javadecompilers.com/)). The `.so` file, which basically just contains a basic CRC8/MAXIM encode/decode algorithm, you can find inside the SDK by unpacking it and looking into `jni/<platform>`.
