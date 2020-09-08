@@ -180,3 +180,5 @@ This code has a *slight* chance to be wrong. Someone at StackExchange helped out
 ## Decompiling the provided SDK and helping out
 
 The SDK in question is [this one](https://github.com/ttlock/Android_SDK_Demo/tree/master/app/src/main/java/ttlock/demo) and to get the source code from it, simply unpack it and run `classes.jar` through Procyon or CFR (Online tool [here](http://www.javadecompilers.com/)). The `.so` file, which basically just contains a basic CRC8/MAXIM encode/decode algorithm, you can find inside the SDK by unpacking it and looking into `jni/<platform>`.
+
+Feel free to PR to this Readme or even actual code!
