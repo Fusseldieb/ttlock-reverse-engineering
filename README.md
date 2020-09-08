@@ -165,15 +165,17 @@ dscrc_table = [0x00, 0x5E, 0xBC, 0xE2, 0x61, 0x3F, 0xDD, 0x83, 0xC2, 0x9C, 0x7E,
     0x74, 0x2A, 0xC8, 0x96, 0x15, 0x4B, 0xA9, 0xF7, 0xB6, 0xE8, 0x0A, 0x54,
     0xD7, 0x89, 0x6B, 0x35]
     
-def xordata(data_bytes):
+def decodeWithEncrypt(data_bytes, encrypt_byte):
     da_len = len(data_bytes)
     for i in range(0,da_len):
-        data_bytes[i] ^= a4KeyByte ^ dscrc_table[da_len]
+        data_bytes[i] ^= encrypt_byte ^ dscrc_table[da_len]
 ```
 
 The inverse of a XOR function is also XOR [\*](https://stackoverflow.com/a/14279896/3525780) 
 
 Even after trying to XOR and AES decrypt it, it still gets a padding error. Something is obviously missing.
+
+This code has a *slight* chance to be wrong. Someone at StackExchange helped out with the `.so` Assembly part, however something still doesn't match up. The `.so` contains two functions which are used a lot throughout the code: `encodeWithEncrypt` and `decodeWithEncrypt`. Above code does the XOR part, and we know that the inverse of XOR is XOR, so why does the file have two functions, one to *encode* and one to *decode*?
 
 ## Decompiling the provided SDK and helping out
 
