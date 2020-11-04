@@ -104,7 +104,7 @@ Bytes (in DEC):
 
 PACKET TAIL
 "59 0d 0a" = "59" is the CRC byte of whole header+data
-(in this case begins from 7f and ends at 0a) in CRC8/MAXIM format 
+(in this case begins from 7f and ends at 670a) in CRC8/MAXIM format 
 and "0d 0a" occurrs at the end of every packet, 
 which is a carriage return + line feed
 ```
