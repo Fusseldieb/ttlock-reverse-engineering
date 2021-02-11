@@ -187,4 +187,4 @@ Feel free to PR to this Readme or even actual code! The only thing that I ask yo
 
 # UPDATE:
 
-With the hard work of @kind3r it has now become true! The TTLock has been partially reverse-engineered and is working with a RPi: https://github.com/kind3r/ttlock-sdk-js/
+With the hard work of @kind3r it has now become true! The TTLock has been mostly reverse-engineered and is working with a RPi: https://github.com/kind3r/ttlock-sdk-js/
