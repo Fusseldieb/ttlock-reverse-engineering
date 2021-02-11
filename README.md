@@ -184,3 +184,7 @@ This code has a *slight* chance to be wrong. Someone at StackExchange helped out
 The SDK in question is [this one](https://github.com/ttlock/Android_SDK_Demo/blob/master/app/libs/ttlock-release-3.0.7.aar) and to get the source code from it, simply unpack it and run `classes.jar` through Procyon or CFR (Online tool [here](http://www.javadecompilers.com/)). The `.so` file, which basically just contains a basic CRC8/MAXIM encode/decode algorithm, you can find inside the SDK by unpacking it and looking into `jni/<platform>`.
 
 Feel free to PR to this Readme or even actual code! The only thing that I ask you is not to push proprietary code, other than that, feel free :)
+
+# UPDATE:
+
+With the hard work of @kind3r it has now become true! The TTLock has been partially reverse-engineered and is working with a RPi: https://github.com/kind3r/ttlock-sdk-js/
